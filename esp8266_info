@@ -1,0 +1,45 @@
+cd Downloads/esptool-master/
+sudo python esptool.py -p /dev/ttyUSB0 write_flash 0x00 /home/drpoh/Downloads/nodemcu_float_0.9.6-dev_20150406.bin
+screen /dev/ttyUSB0 115200
+drpoh@drpoh-PC:~/Downloads/ESPlorer$ java -jar "ESPlorer.jar" 
+
+****************************************************
+AT+RST
+
+OK
+
+ ets Jan  8 2013,rst cause:2, boot mode:(3,6)
+
+load 0x40100000, len 1396, room 16 
+tail 4
+chksum 0x89
+load 0x3ffe8000, len 776, room 4 
+tail 4
+chksum 0xe8
+load 0x3ffe8308, len 540, room 4 
+tail 8
+chksum 0xc0
+csum 0xc0
+
+2nd boot version : 1.4(b1)
+  SPI Speed      : 40MHz
+  SPI Mode       : QIO
+  SPI Flash Size & Map: 8Mbit(512KB+512KB)
+jump to run user1 @ 1000
+
+��ՁMEM CHECK FAIL!!!
+�rlr
+Ai-Thinker Technology Co. Ltd.
+
+ready
+********************************************
+AT+GMR
+AT version:0.25.0.0(Jun  5 2015 16:27:16)
+SDK version:1.1.1
+Ai-Thinker Technology Co. Ltd.
+Jun 23 2015 23:23:50
+**************************************************************
+Edit file init.lua and set SSID and MasterPassword Then disconnect any terminal programm, and at command prompt type:
+./luatool.py --port /dev/ttyUSB0 --src init.lua --dest init.lua --verbose
+*******************************************************
+
